@@ -1,0 +1,66 @@
+extends layout
+
+block content
+	h1 V-Doc
+	p.lead Your Virtual Doctor.
+	hr
+	div.row( )
+		md-layout( md-column-small md-align='center')
+			md-card(md-flex='50' style=' border-radius:5px; background-color:white;')
+				md-card-media
+				md-card-actions( md-column  )
+						md-layout( md-column )
+							md-layout( md-row )
+								md-layout
+									md-button
+										a.btn.btn-facebook.btn-social(href='/auth/facebook')
+											i.fa.fa-facebook
+											| Sign in with Facebook
+									md-button
+										a.btn.btn-google.btn-social(href='/auth/google')
+											i.fa.fa-google-plus
+											| Sign in with Google
+							md-layout(md-row )
+								md-layout( md-column md-flex-offset="10" )
+									md-layout(md-row  md-align='center' style='padding:10px;'  )
+										md-input-container
+											label(for='email')
+												| User Email
+												md-input(type='email' name='email', id='email',  md-autofocus, required )
+									md-layout(md-align='center'  style='padding:10px;'  )
+										md-input-container
+											label(for='password')
+												|  Password
+												md-input(type='password', name='password', id='password', md-autofocus, required)
+									md-layout(md-row md-align='end' style='padding-top:20px;' )
+										md-button
+											| Login
+								md-layout(md-column md-flex='10' )
+			md-card(md-flex='50' style='min-width:350px;')
+				md-card-media-cover(md-solid)
+					md-card-media(md-ratio='1:1')
+						img(src='images/card-sky.jpg')
+					md-card-area
+						md-card-header
+							.md-title Sign Up
+							.md-subhead {{faker.lorem.sentence(5)}}
+						md-card-actions
+							md-button
+							md-button Start
+
+		//.col-sm-6
+		//	h2 Heading
+		//	div
+		//		form
+		//			| {{message}}
+		//			span(class='error')
+		//				p you must enter a password
+		//			textarea(v-model='message')
+		//			button send message
+		//			md-button.md-icon-button.md-list-action
+		//				md-icon info
+		//			pre
+		//				| {{$data}}
+		//	p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		//	p
+		//		a.btn.btn-default(href='#', role='button') View details »
